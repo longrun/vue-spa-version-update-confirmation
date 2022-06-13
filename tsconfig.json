@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es2020",
+    "module": "es2020",
+    "sourceMap": true,
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true, /* import Vue from 'vue';のような形式を有効にする */
+    /* thisの型推論  */
+    "noImplicitThis": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "baseUrl": "./",
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": [
+        "src/*" /* '@/account/register'のようにimportできるようにする */
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

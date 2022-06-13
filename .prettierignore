@@ -1,0 +1,8 @@
+.prettierrc
+*.yml
+**/*.md
+node_modules/
+.nuxt/
+.output/
+.yarn/
+public/
