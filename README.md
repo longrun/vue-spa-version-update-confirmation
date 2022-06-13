@@ -5,3 +5,4 @@ that a newer version is available and asks the user if there wants to upgrade.
 
 - Vue 3
 - Vite
+- State store: pinia
