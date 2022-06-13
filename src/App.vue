@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, version } from 'vue'
 import { useVersionStore } from '@/store/version'
 
 export default defineComponent({
@@ -25,21 +25,23 @@ export default defineComponent({
   methods: {},
   created() {
     const versionManager = useVersionStore()
+    versionManager.$subscribe((mutation, state) => {
+      if (versionManager.isAvailableNewApp()) {
+        this.moshaToast(
+          {
+            title: 'New version is available!',
+            description: `It's a new version ${state.latest} of the app. Please reload your Web browser.`,
+          },
+          {
+            hideProgressBar: 'true',
+            showIcon: 'true',
+            type: 'info',
+            timeout: -1,
+          },
+        )
+      }
+    })
     this.workingVersion = versionManager.current
-    if (!versionManager.isSameVersion()) {
-      this.moshaToast(
-        {
-          title: 'New version is available!',
-          description: `It's a new version ${versionManager.latest} of the app. Please reload your Web browser.`,
-        },
-        {
-          hideProgressBar: 'true',
-          showIcon: 'true',
-          type: 'info',
-          timeout: -1,
-        },
-      )
-    }
   },
 })
 </script>
