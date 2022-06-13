@@ -1,9 +1,7 @@
 <script setup></script>
 
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <h1>this is the Home</h1>
 </template>
 
 <style>

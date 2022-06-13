@@ -1,12 +1,13 @@
 class StoreCacheToLocalStorage {
   constructor() {}
-  get() {
-    return {};
+  get(): any {
+    return {}
   }
-  set({}) {
+  set({}): void {
     // to save
   }
-  delete(key) {
+  delete(key: string): void {
     // to delete
+    console.log('delete', key)
   }
 }
